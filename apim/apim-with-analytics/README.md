@@ -5,10 +5,10 @@ WSO2 API Manager is pre-populated with an API called PhoneVerification API which
 as its backend service. This API was invoked 1000+ times on 11/05/2018 to generate analytics data (you may need to turn your system
 date to this date in order to demonstrate analytics or you may invoke the API to generate new analytics).
 
-Demo Setup explained in the below image:
+### Demo Setup
 ![alt tag](setup-diagram.png)
 
-Demo Deployment:
+### Demo Deployment
 ![alt tag](deployment-diagram.png)
 
 ## Product Details
@@ -16,7 +16,7 @@ Demo Deployment:
 WSO2 API Manager: https://wso2.com/api-management/
 Version: 2.6.0
 
-## Few Demo scenarios
+## Few Demo Scenarios
 
 * Demonstrate API Publisher/Developer Portal capabilities.
 * Invoke the PhoneVerification API and demonstrate the API invocation.
@@ -38,11 +38,11 @@ Version: 2.6.0
     Developer Portal: https://localhost:9443/store
 * Invoke the API using following CURL command;
   ```
-    curl -k -X GET "https://localhost:8243/phoneverify/1.0.0/CheckPhoneNumber?PhoneNumber=6507454499&LicenseKey=0" -H "accept: application/xml" -H "Authorization: Bearer a78ad009-5e30-3987-88f4-2a15eaa0f946"
+  curl -k -X GET "https://localhost:8243/phoneverify/1.0.0/CheckPhoneNumber?PhoneNumber=6507454499&LicenseKey=0" -H "accept: application/xml" -H "Authorization: Bearer a78ad009-5e30-3987-88f4-2a15eaa0f946"
   ```
 * Demonstrate throttling using following bash command; Last message should be throttled out.
   ```
-    for ((i=0; i<11; i++)) do curl -k -X GET "https://localhost:8243/phoneverify/1.0.0/CheckPhoneNumber?PhoneNumber=6507454499&LicenseKey=0" -H "accept: application/xml" -H "Authorization: Bearer eedc53c2-f453-3b7d-b517-7033257300e0"; sleep 1; done;
+  for ((i=0; i<11; i++)) do curl -k -X GET "https://localhost:8243/phoneverify/1.0.0/CheckPhoneNumber?PhoneNumber=6507454499&LicenseKey=0" -H "accept: application/xml" -H "Authorization: Bearer eedc53c2-f453-3b7d-b517-7033257300e0"; sleep 1; done;
   ```
 
 ## References
