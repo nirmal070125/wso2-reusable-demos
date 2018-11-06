@@ -27,11 +27,15 @@ Version: 2.6.0
 
 * You need a running [Docker](https://www.docker.com/get-docker) environment and [Docker Compose](https://docs.docker.com/compose/install/#install-compose) tool.
 * You need an Internet Connection (Setup will pull few docker images from the WSO2 docker repository[http://docker.wso2.com/]).
+* In order to run this Docker Compose setup, you will need an active [Free Trial Subscription](https://wso2.com/free-trial-subscription)
+from WSO2 since the referring Docker images hosted at docker.wso2.com contains the latest updates and fixes for WSO2 API Manager and
+API Manager Analytics 2.6.0 products. You can sign up for a Free Trial Subscription [here](https://wso2.com/free-trial-subscription).
 
 ## Instructions
 
 * Git Clone the project locally.
 * Navigate to the `wso2-reusable-demos/apim/apim-with-analytics` directory.
+* Run ```docker login docker.wso2.com``` and login with your WSO2 subscription username and password.
 * Run ```docker-compose up``` command. This will start the above explained setup.
 * Access WSO2 API Manager using following URLs;
     Publisher: https://localhost:9443/Publisher
@@ -44,6 +48,10 @@ Version: 2.6.0
   ```
   for ((i=0; i<11; i++)) do curl -k -X GET "https://localhost:8243/phoneverify/1.0.0/CheckPhoneNumber?PhoneNumber=6507454499&LicenseKey=0" -H "accept: application/xml" -H "Authorization: Bearer eedc53c2-f453-3b7d-b517-7033257300e0"; sleep 1; done;
   ```
+
+## Clean The Environment
+
+* To stop the environment you can either hit `Ctrl+c` or `docker-compose down` commands.
 
 ## References
 
